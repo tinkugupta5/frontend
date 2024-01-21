@@ -4,10 +4,6 @@ import logo from "../logo.png";
 
 
 const Navbar = () => {
-
-
-  
-
   return (
     <div>
       <nav
