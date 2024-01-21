@@ -5,11 +5,13 @@ import logo from "../logo.png";
 
 const Navbar = () => {
   return (
+
     <div>
       <nav
         className="navbar is-fixed-top has-shadow"
         role="navigation"
         aria-label="main navigation"
+        
       >
         <div className="navbar-brand">
           <NavLink to="/dashboard" className="navbar-item">
