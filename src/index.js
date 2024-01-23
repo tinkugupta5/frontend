@@ -8,8 +8,6 @@ const container = document.getElementById('root');
 const root = createRoot(container);
 // In your JavaScript file (e.g., app.js)
 
-
-
 root.render(
   <React.StrictMode>
     <Provider store={store}>
