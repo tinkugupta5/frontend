@@ -22,9 +22,7 @@ export const LoginUser = createAsyncThunk("user/loginUser",async(user,thunkAPI) 
         {
             const message = error.response.data.msg
             return thunkAPI.rejectWithValue(message)
-
         }
-        
     }
 })
 
