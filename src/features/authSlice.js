@@ -32,16 +32,10 @@ export const authSlice = createSlice({
     reducers:{
         reset:(state) => initialState
     },
-
     // to handle createAsyncThunk we use extra reduer
-
     extraReducers:(builder) => {
         builder.addCase(LoginUser.pending,(state) => {
-            state.isLoading = true;
-            
+            state.isLoading = true;           
         })
     }
-
-
-
 })
