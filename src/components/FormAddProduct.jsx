@@ -8,7 +8,7 @@ const FormAddProduct = () => {
     <div>
       <h1 className="title">Products</h1>
       
-      <h2 className="subtitle">Add New Product</h2>
+      <h2 className="subtitle">Add New Product</h2>y
       <div className="card is-shadowless">
         <div className="card-content">
           <div className="content">
@@ -20,7 +20,8 @@ const FormAddProduct = () => {
                   <input
                     type="text"
                     className="input"
-                 
+
+                    
                     placeholder="Product Name"
                   />
                 </div>
