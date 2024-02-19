@@ -13,11 +13,18 @@ const Login = () => {
   const navigate = useNavigate();
   const {user,isError,isSuccess,isLoading,message} = useSelector((state) => state.auth)
 
+
+  useEffect(() => {
+    if (user || isSuccess) {
+      navigate("/dashboard");
+    }
+    dispatch(reset());
+  }, [user, isSuccess, dispatch, navigate]);
+  
   const Auth = (e) => {
     e.preventDefault();
-    dispatch(LoginUser({email}))
-
-  }
+    dispatch(LoginUser({ email, password }));
+  };
 
 
 
