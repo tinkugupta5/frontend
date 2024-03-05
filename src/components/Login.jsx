@@ -1,18 +1,16 @@
-import React,{useState,useEffect} from 'react'
-import {useDispatch,useSelector} from 'react-redux'
-import {useNavigate} from 'react-router-dom';
-import {LoginUser,reset} from '../features/authSlice';
-
-
-
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { LoginUser, reset } from "../features/authSlice";
 
 const Login = () => {
-  const [email,setEmail] = useState("");
-  const [password,setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const {user,isError,isSuccess,isLoading,message} = useSelector((state) => state.auth)
-
+  const { user, isError, isSuccess, isLoading, message } = useSelector(
+    (state) => state.auth
+  );
 
   useEffect(() => {
     if (user || isSuccess) {
@@ -20,15 +18,11 @@ const Login = () => {
     }
     dispatch(reset());
   }, [user, isSuccess, dispatch, navigate]);
-  
+
   const Auth = (e) => {
     e.preventDefault();
     dispatch(LoginUser({ email, password }));
   };
-
-
-
-
 
   return (
     <section className="hero is-fullheight is-fullwidth">
@@ -37,7 +31,7 @@ const Login = () => {
           <div className="columns is-centered">
             <div className="column is-4">
               <form onSubmit={Auth} className="box">
-                
+                {isError && <p className="has-text-centered">{message}</p>}
                 <h1 className="title is-2">Sign In</h1>
                 <div className="field">
                   <label className="label">Email</label>
@@ -45,8 +39,8 @@ const Login = () => {
                     <input
                       type="text"
                       className="input"
-                     value={email}
-                     onChange={(e)=>setEmail(e.target.value)}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="Email"
                     />
                   </div>
@@ -58,17 +52,18 @@ const Login = () => {
                       type="password"
                       className="input"
                       value={password}
-                     onChange={(e)=>setPassword(e.target.value)}
+                      onChange={(e) => setPassword(e.target.value)}
                       placeholder="******"
                     />
                   </div>
                 </div>
+                
                 <div className="field mt-5">
                   <button
                     type="submit"
                     className="button is-success is-fullwidth"
                   >
-                    Login
+                    {isLoading ? "Loading..." : "Login"}
                   </button>
                 </div>
               </form>
@@ -77,7 +72,7 @@ const Login = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
