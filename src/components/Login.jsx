@@ -56,9 +56,7 @@ const Login = () => {
                       placeholder="******"
                     />
                   </div>
-                </div>
-                
-                
+                </div>             
                 <div className="field mt-5">
                   <button
                     type="submit"
