@@ -10,6 +10,7 @@ const initialState = {
 }
 
 export const LoginUser = createAsyncThunk("user/LoginUser", async(user, thunkAPI) => {
+    console.log(user.email);
     const data = {
         email: user.email,
         password: user.password
