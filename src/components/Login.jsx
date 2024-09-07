@@ -42,6 +42,7 @@ const Login = () => {
                       placeholder="Email"
                     />
                   </div>
+                  
                 </div>
                 <div className="field">
                   <label className="label">Password</label>
